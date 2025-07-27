@@ -18,20 +18,31 @@ A sleek and elegant plasmoid for at-a-glance system monitoring on KDE Plasma. Ke
 
 ## Installation
 
-1.  Go to the [Releases page](https://github.com/PRASSamin/system-monitor/releases) of this repository.
-2.  Download the latest `.plasmoid` file.
-3.  Right-click on your Plasma Desktop or Panel, select "Add Widgets...", and then click "Install From Local File...".
-4.  Select the downloaded `.plasmoid` file to install.
+### Method 1: Using Pling
 
-Alternatively, you can install it via the command line:
+1. Go to the [SysPeek](https://www.pling.com/p/2304482/) page
+2. Click on the "Download" button to download the latest version of the plasmoid
+3. Right-click on your Plasma Desktop or Panel
+4. Select "Add Widgets..."
+5. Click "Install From Local File..."
+6. Select the downloaded `.plasmoid` file to install
 
-```bash
-plasmapkg2 -i com.github.pras.systemmonitor.plasmoid
-```
+### Method 2: Using KDE Applet Store
+
+1. Open the KDE Applet Store on your system
+2. Search for "SysPeek"
+3. Click the "Install" button to automatically install the plasmoid
+
+Once installed, you can add SysPeek to your desktop or panel by:
+
+1. Right-clicking on your Plasma Desktop or Panel
+2. Selecting "Add Widgets..."
+3. Searching for "SysPeek"
+4. Clicking and dragging it to your desired location
 
 ## Built with Prasmoid
 
-This plasmoid was developed using [**Prasmoid**](https://github.com/PRASSamin/prasmoid), a command-line tool I created to streamline and simplify the development of KDE Plasma applets. If you are a developer interested in creating your own plasmoids, check it out!
+This plasmoid was developed using [**Prasmoid**](https://github.com/PRASSamin/prasmoid), a command-line tool I created to streamline and simplify the development of KDE Plasma plasmoids. If you are a developer interested in creating your own plasmoids, check it out!
 
 ## License
 
