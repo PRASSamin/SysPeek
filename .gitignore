@@ -1,0 +1,10 @@
+# Build artifacts
+build/
+*.plasmoid
+
+# IDE files
+.vscode/
+.idea/
+
+# OS-specific
+.DS_Store
