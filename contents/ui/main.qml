@@ -10,8 +10,7 @@ import org.kde.plasma.plasmoid 2.0
 PlasmoidItem {
     id: root
 
-    property int forcedWidth: 400
-    property int globalSpacing: Kirigami.Units.smallSpacing * 2
+    property int forcedWidth: Plasmoid.configuration.widgetWidth
 
     function percent(val, total) {
         return total > 0 ? Math.round(val / total * 100) + "%" : "N/A";
@@ -112,36 +111,60 @@ PlasmoidItem {
         id: rowLayout
 
         anchors.fill: parent
-        spacing: globalSpacing * 2
+        anchors.leftMargin: Plasmoid.configuration.horizontalPadding
+        anchors.rightMargin: Plasmoid.configuration.horizontalPadding
+        anchors.topMargin: Plasmoid.configuration.verticalPadding
+        anchors.bottomMargin: Plasmoid.configuration.verticalPadding
+        spacing: Plasmoid.configuration.itemSpacing
 
         MonitorItem {
+            visible: Plasmoid.configuration.showCpu
             icon: Qt.resolvedUrl("../icons/cpu.svg")
             label: cpu.value !== undefined ? Math.round(cpu.value) + "%" : "N/A"
             color: percentColor(cpu.value)
+            iconTextSpacing: Plasmoid.configuration.iconTextSpacing
+            fontSize: Plasmoid.configuration.fontSize
+            fontFamily: Plasmoid.configuration.fontFamily
         }
 
         MonitorItem {
+            visible: Plasmoid.configuration.showRam
             icon: Qt.resolvedUrl("../icons/memory.svg")
             label: (ramUsed.value !== undefined && ramTotal.value !== undefined) ? percent(ramUsed.value, ramTotal.value) : "N/A"
             color: percentColor((ramUsed.value / ramTotal.value * 100))
+            iconTextSpacing: Plasmoid.configuration.iconTextSpacing
+            fontSize: Plasmoid.configuration.fontSize
+            fontFamily: Plasmoid.configuration.fontFamily
         }
 
         MonitorItem {
+            visible: Plasmoid.configuration.showSwap
             icon: Qt.resolvedUrl("../icons/swap.svg")
             label: (swapUsed.value !== undefined && swapTotal.value !== undefined) ? percent(swapUsed.value, swapTotal.value) : "N/A"
             color: percentColor((swapUsed.value / swapTotal.value * 100))
+            iconTextSpacing: Plasmoid.configuration.iconTextSpacing
+            fontSize: Plasmoid.configuration.fontSize
+            fontFamily: Plasmoid.configuration.fontFamily
         }
 
         MonitorItem {
+            visible: Plasmoid.configuration.showUpload
             icon: Qt.resolvedUrl("../icons/up.svg")
             label: netUp.value !== undefined && formatBytes(netUp.value || 0)
             color: speedColor(netUp.value)
+            iconTextSpacing: Plasmoid.configuration.iconTextSpacing
+            fontSize: Plasmoid.configuration.fontSize
+            fontFamily: Plasmoid.configuration.fontFamily
         }
 
         MonitorItem {
+            visible: Plasmoid.configuration.showDownload
             icon: Qt.resolvedUrl("../icons/down.svg")
             label: netDown.value !== undefined && formatBytes(netDown.value || 0)
             color: speedColor(netDown.value)
+            iconTextSpacing: Plasmoid.configuration.iconTextSpacing
+            fontSize: Plasmoid.configuration.fontSize
+            fontFamily: Plasmoid.configuration.fontFamily
         }
 
     }
@@ -150,7 +173,8 @@ PlasmoidItem {
         anchors.fill: root
         anchors.margins: -10
         onClicked: {
-            executable.exec(plasmoid.configuration.launchCommand ?? "plasma-systemmonitor")
+            executable.exec(plasmoid.configuration.launchCommand ?? "plasma-systemmonitor");
         }
     }
+
 }

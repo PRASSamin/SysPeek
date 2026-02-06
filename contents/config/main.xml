@@ -11,5 +11,53 @@
             <label>Launch Command</label>
             <default>plasma-systemmonitor</default>
         </entry>
+        <entry name="itemSpacing" type="Int">
+            <label>Item Spacing</label>
+            <default>8</default>
+        </entry>
+        <entry name="iconTextSpacing" type="Int">
+            <label>Icon Text Spacing</label>
+            <default>4</default>
+        </entry>
+        <entry name="horizontalPadding" type="Int">
+            <label>Horizontal Padding</label>
+            <default>0</default>
+        </entry>
+        <entry name="verticalPadding" type="Int">
+            <label>Vertical Padding</label>
+            <default>0</default>
+        </entry>
+        <entry name="fontSize" type="Int">
+            <label>Font Size</label>
+            <default>12</default>
+        </entry>
+        <entry name="fontFamily" type="String">
+            <label>Font Family</label>
+            <default></default>
+        </entry>
+        <entry name="showCpu" type="Bool">
+            <label>Show CPU</label>
+            <default>true</default>
+        </entry>
+        <entry name="showRam" type="Bool">
+            <label>Show RAM</label>
+            <default>true</default>
+        </entry>
+        <entry name="showSwap" type="Bool">
+            <label>Show Swap</label>
+            <default>true</default>
+        </entry>
+        <entry name="showUpload" type="Bool">
+            <label>Show Upload Speed</label>
+            <default>true</default>
+        </entry>
+        <entry name="showDownload" type="Bool">
+            <label>Show Download Speed</label>
+            <default>true</default>
+        </entry>
+        <entry name="widgetWidth" type="Int">
+            <label>Widget Width</label>
+            <default>400</default>
+        </entry>
     </group>
 </kcfg>

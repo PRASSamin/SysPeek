@@ -7,12 +7,15 @@ Item {
     property alias icon: iconImage.source
     property alias label: labelText.text
     property alias color: labelText.color
+    property int iconTextSpacing: Kirigami.Units.smallSpacing
+    property int fontSize: 12
+    property string fontFamily: ""
 
     implicitWidth: parent
     implicitHeight: parent
 
     Row {
-        spacing: Kirigami.Units.smallSpacing
+        spacing: iconTextSpacing
         anchors.centerIn: parent
 
         Image {
@@ -28,7 +31,8 @@ Item {
 
             verticalAlignment: Text.AlignVCenter
             color: color
-            font.pixelSize: Kirigami.Units.gridUnit * 0.7
+            font.pixelSize: fontSize
+            font.family: fontFamily !== "" ? fontFamily : undefined
             font.bold: true
         }
 
