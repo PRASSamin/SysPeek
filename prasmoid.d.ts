@@ -100,8 +100,10 @@ interface Console {
    * console.color("Hey", "you!", "red")
    */
   color(
-    ...message: any[],
-    color: "red" | "green" | "yellow" | "blue" | "magenta" | "cyan" | "black"
+    ...args: [
+      ...any[],
+      "red" | "green" | "yellow" | "blue" | "magenta" | "cyan" | "black",
+    ]
   ): void;
 }
 
