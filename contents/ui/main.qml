@@ -149,7 +149,8 @@ PlasmoidItem {
     MouseArea {
         anchors.fill: root
         anchors.margins: -10
-        onClicked: executable.exec("plasma-systemmonitor")
+        onClicked: {
+            executable.exec(plasmoid.configuration.launchCommand ?? "plasma-systemmonitor")
+        }
     }
-
 }
